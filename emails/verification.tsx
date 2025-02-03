@@ -6,11 +6,10 @@ import {
   Preview,
   Section,
   Tailwind,
-  Text
+  Text,
 } from "@react-email/components";
 
-const siteUrl =
-  process.env.NEXT_PUBLIC_URL ?? "https://chadnext.moinulmoin.com";
+const siteUrl = process.env.NEXT_PUBLIC_URL ?? "https://chadnext-aj.vercel.app";
 
 interface VerificationTemplateProps {
   userName: string;
@@ -26,9 +25,9 @@ const VerificationTemp: React.FC<Readonly<VerificationTemplateProps>> = ({
     <Preview>Verify your email</Preview>
     <Tailwind>
       <Body className="bg-gray-100">
-        <Container className="p-6 m-10 mx-auto bg-white">
+        <Container className="m-10 mx-auto bg-white p-6">
           <Text className="mb-4 text-lg">Hi, {userName.split(" ")[0]}</Text>
-          <Text className="text-base font-semibold text-center">
+          <Text className="text-center text-base font-semibold">
             Here is your verification code.
           </Text>
           <Section className="mt-4 text-center">
