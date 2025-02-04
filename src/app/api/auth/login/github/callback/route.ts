@@ -85,9 +85,9 @@ export const GET = async (request: Request) => {
       },
     });
 
-    if (githubUser.email) {
-      sendWelcomeEmail({ toMail: newUser.email!, userName: newUser.name! });
-    }
+    // if (githubUser.email) {
+    //   sendWelcomeEmail({ toMail: newUser.email!, userName: newUser.name! });
+    // }
     const sessionTokenCookie = generateSessionToken();
     const session = await createSession(sessionTokenCookie, newUser.id);
     await setSessionTokenCookie(sessionTokenCookie, session.expiresAt);
