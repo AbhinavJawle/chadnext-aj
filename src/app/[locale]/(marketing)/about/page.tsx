@@ -1,4 +1,4 @@
-import { abouts, type About } from "content";
+import { abouts, type About } from "~/content/about";
 import { type Metadata } from "next";
 
 function AboutCard(about: About) {
@@ -25,7 +25,7 @@ export default function About() {
         Learn about the tech stack and inspiration behind ChadNext.
       </p>
       <div className="space-y-10">
-        {abouts.map((p, i) => (
+        {abouts.map((p: About, i: number) => (
           <AboutCard key={i} {...p} />
         ))}
       </div>

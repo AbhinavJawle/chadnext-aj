@@ -1,4 +1,4 @@
-import { type Change, changes } from "content";
+import { type Change, changes } from "~/content/changelog";
 import dayjs from "dayjs";
 import { type Metadata } from "next";
 
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
 };
 
 export default function Changelog() {
-  const posts = changes.sort((a, b) =>
+  const posts = changes.sort((a: Change, b: Change) =>
     dayjs(a.date).isAfter(dayjs(b.date)) ? -1 : 1
   );
 
@@ -35,7 +35,7 @@ export default function Changelog() {
         All the latest updates, improvements, and fixes.
       </p>
       <div className="space-y-10">
-        {posts.map((change, idx) => (
+        {posts.map((change: Change, idx: number) => (
           <ChangeCard key={idx} {...change} />
         ))}
       </div>

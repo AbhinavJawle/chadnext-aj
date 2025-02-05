@@ -178,7 +178,7 @@ export default function AuthForm() {
               Continue with <Icons.gitHub className="ml-2 h-4 w-4" />
             </Link>
           )}
-          //google
+          {/* google */}
           {/* <a href="/login/google">Sign in with Google</a> */}
         </>
       )}
